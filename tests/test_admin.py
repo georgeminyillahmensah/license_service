@@ -1,7 +1,4 @@
-from django.contrib.admin.models import ADDITION, CHANGE, DELETION, LogEntry
-from django.contrib.admin.sites import site
 from django.contrib.auth import get_user_model
-from django.test import Client
 from django.urls import reverse
 
 import pytest

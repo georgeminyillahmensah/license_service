@@ -1,7 +1,6 @@
 """
 Swagger UI and API documentation tests for Centralized License Service
 """
-from django.test import Client
 from django.urls import reverse
 
 from rest_framework import status

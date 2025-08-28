@@ -1,7 +1,7 @@
 """
 Model tests for Centralized License Service
 """
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from django.core.exceptions import ValidationError
 from django.utils import timezone
@@ -40,12 +40,6 @@ class TestBrand:
             brand = Brand()
             brand.full_clean()
 
-    def test_brand_validation(self):
-        """Test brand validation."""
-        # Test required fields
-        with pytest.raises(ValidationError):
-            brand = Brand()
-            brand.full_clean()
 
 
 @pytest.mark.django_db
