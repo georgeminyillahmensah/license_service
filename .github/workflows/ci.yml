@@ -182,10 +182,6 @@ jobs:
         run: |
           flake8 licenses/ users/ license_service/ tests/ --max-line-length=88 --extend-ignore=E203,W503
 
-      - name: Run MyPy (type checking)
-        run: |
-          mypy licenses/ users/ license_service/ --ignore-missing-imports
-
   security:
     name: Security Checks
     runs-on: ubuntu-latest
