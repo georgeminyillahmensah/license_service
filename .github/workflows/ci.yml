@@ -76,9 +76,9 @@ jobs:
       - name: Set up environment variables
         run: |
           {
-            echo "DJANGO_SECRET_KEY=${{ secrets.SECRET_KEY }}"
-            echo "DJANGO_DEBUG=${{ secrets.DEBUG }}"
-            echo "DJANGO_ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}"
+            echo "SECRET_KEY=${{ secrets.SECRET_KEY }}"
+            echo "DEBUG=${{ secrets.DEBUG }}"
+            echo "ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}"
             echo "DB_ENGINE=${{ secrets.DB_ENGINE }}"
             echo "DB_NAME=${{ secrets.DB_NAME }}"
             echo "DB_USER=${{ secrets.DB_USER }}"
@@ -256,9 +256,9 @@ jobs:
       - name: Set up environment variables
         run: |
           {
-            echo "DJANGO_SECRET_KEY=${{ secrets.SECRET_KEY }}"
-            echo "DJANGO_DEBUG=${{ secrets.DEBUG }}"
-            echo "DJANGO_ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}"
+            echo "SECRET_KEY=${{ secrets.SECRET_KEY }}"
+            echo "DEBUG=${{ secrets.DEBUG }}"
+            echo "ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}"
             echo "DB_ENGINE=${{ secrets.DB_ENGINE }}"
             echo "DB_NAME=${{ secrets.DB_NAME }}"
             echo "DB_USER=${{ secrets.DB_USER }}"
