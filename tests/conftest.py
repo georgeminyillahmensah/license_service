@@ -1,15 +1,17 @@
 """
 Pytest configuration and fixtures for Centralized License Service
 """
-import pytest
-from django.test import Client
+from datetime import timedelta
+
 from django.contrib.auth import get_user_model
+from django.test import Client
+from django.utils import timezone
+
+import pytest
 from rest_framework.test import APIClient
 
 # JWT tokens not needed for basic testing
-from licenses.models import Brand, Product, LicenseKey, License, Activation
-from django.utils import timezone
-from datetime import timedelta
+from licenses.models import Activation, Brand, License, LicenseKey, Product
 
 User = get_user_model()
 

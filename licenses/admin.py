@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
-from .models import Brand, Product, LicenseKey, License, Activation
+
+from .models import Activation, Brand, License, LicenseKey, Product
 
 
 @admin.register(Brand)

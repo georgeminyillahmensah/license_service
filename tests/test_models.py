@@ -1,11 +1,14 @@
 """
 Model tests for Centralized License Service
 """
-import pytest
+from datetime import datetime, timedelta
+
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-from datetime import datetime, timedelta
-from licenses.models import Brand, Product, LicenseKey, License, Activation
+
+import pytest
+
+from licenses.models import Activation, Brand, License, LicenseKey, Product
 
 
 @pytest.mark.django_db

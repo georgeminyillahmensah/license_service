@@ -1,11 +1,14 @@
 """
 API tests for Centralized License Service
 """
-import pytest
 import json
+
 from django.urls import reverse
+
+import pytest
 from rest_framework import status
-from licenses.models import Brand, Product, LicenseKey, License, Activation
+
+from licenses.models import Activation, Brand, License, LicenseKey, Product
 
 
 @pytest.mark.django_db

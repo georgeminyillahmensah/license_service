@@ -1,11 +1,12 @@
 """
 Swagger UI and API documentation tests for Centralized License Service
 """
-import pytest
-from django.urls import reverse
 from django.test import Client
-from rest_framework.test import APIClient
+from django.urls import reverse
+
+import pytest
 from rest_framework import status
+from rest_framework.test import APIClient
 
 
 class TestSwaggerUIAccessibility:

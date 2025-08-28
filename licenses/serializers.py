@@ -1,6 +1,8 @@
-from rest_framework import serializers
-from .models import Brand, Product, LicenseKey, License, Activation
 from django.utils import timezone
+
+from rest_framework import serializers
+
+from .models import Activation, Brand, License, LicenseKey, Product
 
 
 class BrandSerializer(serializers.ModelSerializer):

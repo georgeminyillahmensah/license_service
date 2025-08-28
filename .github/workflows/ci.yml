@@ -112,6 +112,8 @@ jobs:
           if not User.objects.filter(username='testadmin').exists():
               User.objects.create_superuser('testadmin', 'admin@test.com', 'testpass123')
           "
+      - name: Set DJANGO_SETTINGS_MODULE
+        run: echo "DJANGO_SETTINGS_MODULE=license_service.settings" >> $GITHUB_ENV
 
       - name: Run tests with pytest
         run: |

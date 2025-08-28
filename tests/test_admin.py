@@ -1,10 +1,12 @@
-import pytest
+from django.contrib.admin.models import ADDITION, CHANGE, DELETION, LogEntry
+from django.contrib.admin.sites import site
+from django.contrib.auth import get_user_model
 from django.test import Client
 from django.urls import reverse
-from django.contrib.auth import get_user_model
-from django.contrib.admin.sites import site
-from django.contrib.admin.models import LogEntry, ADDITION, CHANGE, DELETION
-from licenses.models import Brand, Product, LicenseKey, License, Activation
+
+import pytest
+
+from licenses.models import Activation, Brand, License, LicenseKey, Product
 
 User = get_user_model()
 

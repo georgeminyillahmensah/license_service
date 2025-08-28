@@ -1,10 +1,12 @@
-from django.db import models
-from django.utils.translation import gettext_lazy as _
-from django.core.validators import MinValueValidator
-from users.models import User
-from django.utils import timezone
-import uuid
 import logging
+import uuid
+
+from django.core.validators import MinValueValidator
+from django.db import models
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
+
+from users.models import User
 
 logger = logging.getLogger(__name__)
 

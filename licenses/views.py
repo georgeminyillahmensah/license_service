@@ -1,33 +1,36 @@
-from rest_framework import viewsets, status, permissions
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from rest_framework.exceptions import ValidationError, PermissionDenied
+import logging
+
+from django.core.exceptions import ObjectDoesNotExist
+from django.db import transaction
+from django.shortcuts import get_object_or_404
+from django.utils import timezone
+
 from drf_spectacular.utils import (
+    OpenApiExample,
+    OpenApiParameter,
     extend_schema,
     extend_schema_view,
-    OpenApiParameter,
-    OpenApiExample,
 )
-from django.shortcuts import get_object_or_404
-from django.db import transaction
-from django.utils import timezone
-from django.core.exceptions import ObjectDoesNotExist
-from .models import Brand, Product, LicenseKey, License, Activation
+from rest_framework import permissions, status, viewsets
+from rest_framework.decorators import action
+from rest_framework.exceptions import PermissionDenied, ValidationError
+from rest_framework.response import Response
+
+from .models import Activation, Brand, License, LicenseKey, Product
 from .serializers import (
-    BrandSerializer,
-    ProductSerializer,
-    LicenseKeySerializer,
-    LicenseSerializer,
-    ActivationSerializer,
-    LicenseKeyDetailSerializer,
-    LicenseStatusSerializer,
-    LicenseActivationSerializer,
-    LicenseRenewalSerializer,
-    LicenseSuspensionSerializer,
-    LicenseCancellationSerializer,
     ActivationDeactivationSerializer,
+    ActivationSerializer,
+    BrandSerializer,
+    LicenseActivationSerializer,
+    LicenseCancellationSerializer,
+    LicenseKeyDetailSerializer,
+    LicenseKeySerializer,
+    LicenseRenewalSerializer,
+    LicenseSerializer,
+    LicenseStatusSerializer,
+    LicenseSuspensionSerializer,
+    ProductSerializer,
 )
-import logging
 
 logger = logging.getLogger(__name__)
 
