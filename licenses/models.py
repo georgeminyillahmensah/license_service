@@ -353,8 +353,8 @@ class Activation(models.Model):
 
         # Log the deactivation
         logger.info(
-            f"Activation {self.id} deactivated for instance {self.instance_identifier}: "
-            f"{reason or 'No reason provided'}"
+            f"Activation {self.id} deactivated for instance "
+            f"{self.instance_identifier}: {reason or 'No reason provided'}"
         )
 
         return True

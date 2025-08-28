@@ -313,8 +313,8 @@ class LicenseViewSet(viewsets.ModelViewSet):
 
         # Log the status change
         logger.info(
-            f"License {license_obj.id} status changed from {license_obj.status} to {new_status} "
-            f"by user {request.user.username}"
+            f"License {license_obj.id} status changed from {license_obj.status} "
+            f"to {new_status} by user {request.user.username}"
         )
 
         license_obj.status = new_status
@@ -363,8 +363,9 @@ class ActivationViewSet(viewsets.ModelViewSet):
             activation.deactivate(reason=serializer.validated_data.get("reason"))
 
             logger.info(
-                f"Activation {activation.id} deactivated by user {request.user.username} "
-                f"for instance {activation.instance_identifier}"
+                f"Activation {activation.id} deactivated by user "
+                f"{request.user.username} for instance "
+                f"{activation.instance_identifier}"
             )
 
             result_serializer = self.get_serializer(activation)
@@ -408,7 +409,8 @@ class ActivationViewSet(viewsets.ModelViewSet):
                     deactivated_count += 1
 
                     logger.info(
-                        f"Activation {activation.id} bulk deactivated by user {request.user.username}"
+                        f"Activation {activation.id} bulk deactivated by user "
+                        f"{request.user.username} for instance "
                     )
                 else:
                     errors.append(f"Activation {activation_id} is already deactivated")
@@ -573,8 +575,8 @@ class LicenseServiceViewSet(viewsets.ViewSet):
             )
 
             logger.info(
-                f"License {license_obj.id} activated for instance {instance_identifier} "
-                f"by license key {license_key}"
+                f"License {license_obj.id} activated for instance "
+                f"{instance_identifier} by license key {license_key}"
             )
 
         return Response(
@@ -604,7 +606,8 @@ class LicenseServiceViewSet(viewsets.ViewSet):
 
         if not all([customer_email, brand_id, product_id, expiration_date]):
             raise ValidationError(
-                "Missing required fields: customer_email, brand_id, product_id, expiration_date"
+                "Missing required fields: customer_email, brand_id, "
+                "product_id, expiration_date"
             )
 
         try:

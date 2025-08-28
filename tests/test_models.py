@@ -245,7 +245,8 @@ class TestActivation:
     def test_activation_reactivate(self, activation):
         """Test activation reactivation functionality."""
         activation.deactivate("Testing deactivation")
-        # Activation model doesn't have reactivate method, so this test is not applicable
+        # Activation model doesn't have reactivate method,
+        # # so this test is not applicable
         pass
 
     def test_activation_validation(self):
