@@ -41,7 +41,6 @@ class TestBrand:
             brand.full_clean()
 
 
-
 @pytest.mark.django_db
 class TestProduct:
     """Test Product model functionality."""
