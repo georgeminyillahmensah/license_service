@@ -43,11 +43,17 @@ extend-exclude = '''
 
 [tool.isort]
 profile = "black"
-multi_line_output = 3
 line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+ensure_newline_before_comments = true
 known_first_party = ["licenses", "users", "license_service"]
 known_django = ["django"]
 sections = ["FUTURE", "STDLIB", "DJANGO", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+skip_gitignore = true
+
+
 
 [tool.mypy]
 python_version = "3.10"

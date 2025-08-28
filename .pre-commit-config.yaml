@@ -31,20 +31,20 @@ repos:
     rev: 6.1.0
     hooks:
       - id: flake8
-        args: [--max-line-length=88, --extend-ignore=E203, W503]
+        args: [--max-line-length=88, --extend-ignore=E203,W503]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.7.1
     hooks:
       - id: mypy
         additional_dependencies: [types-all]
-        args: [--ignore-missing-imports]
+        args: [--ignore-missing-imports, --pretty, --show-error-codes]
 
   - repo: https://github.com/pycqa/bandit
     rev: 1.7.5
     hooks:
       - id: bandit
-        args: [-r, licenses/, users/, license_service/]
+        args: [-r, licenses/, users/, license_service/, --format, json]
         exclude: tests/
 
   - repo: https://github.com/asottile/pyupgrade
